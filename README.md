@@ -25,7 +25,4 @@ It showcases my skills, projects, references, and ways to get in touch.
 - 🔗 **FontAwesome Icons**
 - 🛠️ **Git & GitHub**
 
----
-
-## 📂 Project Structure
 
