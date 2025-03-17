@@ -58,8 +58,12 @@ const Contact = () => {
 
   return (
     <section id="contact">
-      <h2>📬 Get in Touch</h2>
-      <p>If you have any questions, feel free to reach out to me! 🚀</p>
+      <h2>Looking for a Developer? 🚀</h2>
+      <p>I'm always open to new opportunities in web development! Whether you have a job offer, a project, or just want to talk code – feel free to reach out! 🎯</p>
+
+<p>I respond faster than a <code>console.log("Hello World!")</code>... unless I'm busy debugging. 😄</p>
+
+<p>Send me a message or connect with me on social media! 👇</p>
 <br />
       {/* Sociala länkar */}
       <div className="social-links">
