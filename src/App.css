@@ -338,3 +338,200 @@ footer {
 .project a:hover {
   background: #444;
 }
+
+/* === Sociala länkar === */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  background: #f4f4f4;
+  padding: 10px;
+  border-radius: 5px;
+  transition: 0.3s;
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.social-links a:hover {
+  background: #ddd;
+}
+
+/* Anpassade färger för varje plattform */
+.social-links a[href*="github"] {
+  background: #24292e;
+  color: white;
+}
+
+.social-links a[href*="linkedin"] {
+  background: #0077b5;
+  color: white;
+}
+
+.social-links a[href*="twitter"], 
+.social-links a[href*="x"] {
+  background: black;
+  color: white;
+}
+
+/* Ikonstil */
+.social-links img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  filter: invert(1);
+}
+
+/* Hover-effekter */
+.social-links a:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* === Kontakt-sektion styling === */
+#contact h2 {
+  text-align: center;
+}
+
+#contact p {
+  max-width: 600px;
+  margin: 10px auto;
+  line-height: 1.4;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* === Kontaktformulär styling === */
+#contact-form {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Formulärfält */
+#contact-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+#contact-form input,
+#contact-form textarea {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  background: #f9f9f9;
+  transition: 0.3s;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+  outline: none;
+  border-color: #008CBA;
+  background: #fff;
+  box-shadow: 0px 0px 8px rgba(0, 140, 186, 0.3);
+}
+
+/* === Skicka-knapp styling === */
+.send-btn {
+  width: 100%;
+  padding: 12px;
+  background: #008CBA;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.send-btn:hover {
+  background: #005f73;
+  transform: scale(1.05);
+}
+
+/* === Responsiv fix för mobil === */
+@media (max-width: 480px) {
+  #contact-form {
+      width: 90%;
+  }
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 25px; /* Mindre mellanrum */
+  margin-bottom: 15px; /* Lite mindre spacing */
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;  /* Centrerar vertikalt */
+  justify-content: center; /* Centrerar horisontellt */
+  text-decoration: none;
+  font-size: 16px; /* Mindre text */
+  font-weight: bold;
+  padding: 8px 15px; /* Mindre padding */
+  border-radius: 5px;
+  transition: 0.3s ease-in-out;
+  width: 80px; /* Mindre ruta */
+  height: 35px; /* Minskar höjden */
+}
+
+/* Anpassade färger för varje plattform */
+.social-links a[href*="github"] {
+  background: #24292e; /* GitHub svart */
+  color: white;
+}
+
+.social-links a[href*="linkedin"] {
+  background: #0077b5; /* LinkedIn blå */
+  color: white;
+}
+
+.social-links a[href*="twitter"],
+.social-links a[href*="x"] {
+  background: black; /* X (tidigare Twitter) svart */
+  color: white;
+}
+
+/* Ikonstil */
+.social-links i {
+  font-size: 18px; /* Mindre ikon */
+  margin-right: 6px; /* Mindre mellanrum mellan ikon och text */
+}
+
+/* Om du vill att texten försvinner och bara ikonen syns på små skärmar */
+@media (max-width: 480px) {
+  .social-links a {
+      width: 40px;
+      height: 40px;
+      font-size: 0; /* Döljer texten */
+      padding: 8px; /* Gör knappen mer kvadratisk */
+  }
+  
+  .social-links i {
+      font-size: 20px; /* Mindre ikon på små skärmar */
+      margin-right: 0; /* Tar bort mellanrummet */
+  }
+}
+
