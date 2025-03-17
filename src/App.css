@@ -1,0 +1,666 @@
+/* === Allmänna stilar === */
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
+  width: 100%;
+}
+
+/* === Navbar Styling === */
+nav {
+  background: #333;
+  padding: 15px 0;
+  width: 100%;
+}
+
+/* Flexbox för att sprida ut länkar jämnt */
+.navbar {
+  display: flex;
+  justify-content: space-evenly; /* Sprider ut länkarna jämnt */
+  align-items: center;
+  list-style: none;
+  padding: 0 20px; /* Lägger till mer space vid kanterna */
+  margin: 0;
+  width: 100%;
+  flex-wrap: wrap; /* Gör att länkarna hamnar i flera rader vid små skärmar */
+}
+
+/* Länkstil */
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 12px 15px; /* Mindre padding så de inte krockar */
+  transition: 0.3s;
+  border-radius: 5px;
+  white-space: nowrap; /* Förhindrar att texten bryts */
+}
+
+/* Hover-effekt */
+.navbar a:hover {
+  background-color: #555;
+}
+
+/* === Mobilvänlig navbar (anpassar sig vid små skärmar) === */
+@media (max-width: 900px) {
+  .navbar {
+    justify-content: center; /* Centrera länkarna bättre */
+    gap: 20px; /* Mindre mellanrum */
+    flex-wrap: wrap; /* Gör att länkarna automatiskt går till ny rad */
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column; /* Gör att länkarna staplas vertikalt */
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+  }
+}
+
+
+
+
+/* === Footer Styling === */
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 15px 20px;
+  font-size: 14px;
+  margin-top: auto; /* Se till att den alltid trycks ned */
+}
+
+/* Centrera text och ikoner i footern */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 900px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+/* === Ikoner i footern === */
+.footer-links {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+/* Stil för ikonerna */
+.footer-links a {
+  color: white;
+  font-size: 22px;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+/* Gör så att de syns bättre vid hover */
+.footer-links a:hover {
+  color: #008CBA;
+}
+
+/* === Responsiv fix för footer === */
+@media (max-width: 600px) {
+  .footer-container {
+      flex-direction: column;
+      text-align: center;
+      gap: 10px;
+  }
+
+  .footer-links {
+      justify-content: center;
+  }
+}
+
+
+/* === Om Mig-sektion === */
+#about {
+  padding: 50px 20px;
+  background: #f4f4f4;
+  text-align: center;
+}
+
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: auto;
+  gap: 30px;
+}
+
+.about-text {
+  flex: 1;
+  text-align: left;
+  max-width: 450px;
+}
+
+.about-text h2 {
+  font-size: 28px;
+  color: #333;
+}
+
+.about-text p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.about-text a {
+  color: #008CBA;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.about-text a:hover {
+  text-decoration: underline;
+}
+
+/* === Bildstil för Om Mig === */
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.about-image img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #ddd;
+}
+
+/* === Responsiv fix för Om Mig === */
+@media (max-width: 768px) {
+  .about-container {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .about-text {
+      text-align: center;
+  }
+
+  .about-image img {
+      width: 200px;
+      height: 200px;
+  }
+}
+
+/* === Kunskap-sektion === */
+#skills {
+  text-align: center;
+  padding: 50px 20px;
+  background: #f0f0f0;
+}
+
+/* === Container för skills === */
+.skills-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* === Individuell skill-box === */
+.skill {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 130px;
+  transition: 0.3s ease-in-out;
+  border: 1px solid #ddd;
+}
+.skill i {
+  font-size: 40px;  /* Gör ikonerna större */
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+/* === Färger för olika teknologier === */
+.skill:nth-child(1) i { color: #E76F51; } /* HTML */
+.skill:nth-child(2) i { color: #2A9D8F; } /* CSS */
+.skill:nth-child(3) i { color: #E9C46A; } /* JavaScript */
+.skill:nth-child(4) i { color: #264653; } /* React */
+.skill:nth-child(5) i { color: #8D99AE; } /* GitHub */
+
+/* === Hover-effekter === */
+.skill:hover {
+  transform: scale(1.05);
+  background: #FAF3E0;
+  border-color: #E9C46A;
+}
+
+/* === Responsiv fix för skills === */
+@media (max-width: 600px) {
+  .skills-container {
+      flex-direction: column;
+      align-items: center;
+  }
+}
+
+/* === Kontaktformulär styling === */
+#contact-form {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#contact-form input,
+#contact-form textarea {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  background: #f9f9f9;
+  transition: 0.3s;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+  outline: none;
+  border-color: #008CBA;
+  background: #fff;
+  box-shadow: 0px 0px 8px rgba(0, 140, 186, 0.3);
+}
+
+/* === Responsiv fix för formulär === */
+@media (max-width: 480px) {
+  #contact-form {
+      width: 90%;
+  }
+}
+
+/* === Portfölj-sektion === */
+#portfolio {
+  text-align: center;
+  padding: 50px 20px;
+  background: #f4f4f4;
+}
+
+/* === Container för projekten === */
+.portfolio-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* === Individuellt projekt === */
+.project {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  width: 320px;
+  transition: 0.3s ease-in-out;
+  border: 1px solid #ddd;
+}
+
+/* === Projekttitel === */
+.project h3 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* === Projektsammanfattning === */
+.project p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* === Lista med features === */
+.project ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.project ul li {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+/* === Länk till GitHub === */
+.project a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background: #24292e;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: 0.3s;
+  gap: 8px;
+}
+
+/* GitHub-ikon */
+.project a i {
+  font-size: 18px;
+}
+
+/* Hover-effekt */
+.project a:hover {
+  background: #444;
+}
+
+/* === Stil för "Under utveckling" boxen === */
+.coming-soon {
+  opacity: 0.7;
+  border-style: dashed;
+  text-align: center;
+}
+
+/* === Responsiv fix för mobil === */
+@media (max-width: 600px) {
+  .portfolio-container {
+      flex-direction: column;
+      align-items: center;
+  }
+}
+
+
+/* === Sociala länkar === */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  background: #f4f4f4;
+  padding: 10px;
+  border-radius: 5px;
+  transition: 0.3s;
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.social-links a:hover {
+  background: #ddd;
+}
+
+/* Anpassade färger för varje plattform */
+.social-links a[href*="github"] {
+  background: #24292e;
+  color: white;
+}
+
+.social-links a[href*="linkedin"] {
+  background: #0077b5;
+  color: white;
+}
+
+.social-links a[href*="twitter"], 
+.social-links a[href*="x"] {
+  background: black;
+  color: white;
+}
+
+/* Ikonstil */
+.social-links img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  filter: invert(1);
+}
+
+/* Hover-effekter */
+.social-links a:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* === Kontakt-sektion styling === */
+#contact h2 {
+  text-align: center;
+}
+
+#contact p {
+  max-width: 600px;
+  margin: 10px auto;
+  line-height: 1.4;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* === Kontaktformulär styling === */
+#contact-form {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Formulärfält */
+#contact-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+#contact-form input,
+#contact-form textarea {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  background: #f9f9f9;
+  transition: 0.3s;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+  outline: none;
+  border-color: #008CBA;
+  background: #fff;
+  box-shadow: 0px 0px 8px rgba(0, 140, 186, 0.3);
+}
+
+/* === Skicka-knapp styling === */
+.send-btn {
+  width: 100%;
+  padding: 12px;
+  background: #008CBA;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.send-btn:hover {
+  background: #005f73;
+  transform: scale(1.05);
+}
+
+/* === Responsiv fix för mobil === */
+@media (max-width: 480px) {
+  #contact-form {
+      width: 90%;
+  }
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 25px; /* Mindre mellanrum */
+  margin-bottom: 15px; /* Lite mindre spacing */
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;  /* Centrerar vertikalt */
+  justify-content: center; /* Centrerar horisontellt */
+  text-decoration: none;
+  font-size: 16px; /* Mindre text */
+  font-weight: bold;
+  padding: 8px 15px; /* Mindre padding */
+  border-radius: 5px;
+  transition: 0.3s ease-in-out;
+  width: 80px; /* Mindre ruta */
+  height: 35px; /* Minskar höjden */
+}
+
+/* Anpassade färger för varje plattform */
+.social-links a[href*="github"] {
+  background: #24292e; /* GitHub svart */
+  color: white;
+}
+
+.social-links a[href*="linkedin"] {
+  background: #0077b5; /* LinkedIn blå */
+  color: white;
+}
+
+.social-links a[href*="twitter"],
+.social-links a[href*="x"] {
+  background: black; /* X (tidigare Twitter) svart */
+  color: white;
+}
+
+/* Ikonstil */
+.social-links i {
+  font-size: 18px; /* Mindre ikon */
+  margin-right: 6px; /* Mindre mellanrum mellan ikon och text */
+}
+
+/* Om du vill att texten försvinner och bara ikonen syns på små skärmar */
+@media (max-width: 480px) {
+  .social-links a {
+      width: 40px;
+      height: 40px;
+      font-size: 0; /* Döljer texten */
+      padding: 8px; /* Gör knappen mer kvadratisk */
+  }
+  
+  .social-links i {
+      font-size: 20px; /* Mindre ikon på små skärmar */
+      margin-right: 0; /* Tar bort mellanrummet */
+  }
+}
+
+/* === Referens-sektion === */
+#references {
+  text-align: center;
+  padding: 50px 20px;
+  background: #f4f4f4;
+}
+
+/* === Container för referenser === */
+.references-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* === Individuell referens-box === */
+.reference {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 250px;
+  transition: 0.3s ease-in-out;
+  border: 1px solid #ddd;
+  position: relative;
+}
+
+/* === Ikoner i referenser === */
+.reference i {
+  font-size: 22px; /* Mindre ikon */
+  margin-bottom: 8px;
+  color: #2A9D8F;
+  transition: 0.3s;
+}
+
+/* === Text i referenser === */
+.reference h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.reference p {
+  font-size: 14px;
+  color: #555;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+/* === Hover-effekt === */
+.reference:hover {
+  transform: scale(1.05);
+  background: #FAF3E0;
+  border-color: #E9C46A;
+}
+
+.reference:hover i {
+  color: #E76F51;
+}
+
+/* === Responsiv fix för mobil === */
+@media (max-width: 600px) {
+  .references-container {
+      flex-direction: column;
+      align-items: center;
+  }
+}
+
+
