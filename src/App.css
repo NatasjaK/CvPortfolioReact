@@ -1,5 +1,4 @@
 /* === Allmänna stilar === */
-
 html, body, #root {
   width: 100%;
   height: 100%;
@@ -7,73 +6,130 @@ html, body, #root {
   padding: 0;
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
-
-
+  display: flex;
+  flex-direction: column;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
   min-height: 100vh;
+  width: 100%;
+  flex-direction: column;
 }
 
 main {
   flex-grow: 1;
+  width: 100%;
 }
 
-/* === Navbar === */
+/* === Navbar Styling === */
 nav {
   background: #333;
-  padding: 10px 0;
+  padding: 15px 0;
   width: 100%;
 }
 
+/* Flexbox för att sprida ut länkar jämnt */
 .navbar {
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  justify-content: space-evenly; /* Sprider ut länkarna jämnt */
+  align-items: center;
   list-style: none;
-  padding: 0;
+  padding: 0 20px; /* Lägger till mer space vid kanterna */
   margin: 0;
   width: 100%;
+  flex-wrap: wrap; /* Gör att länkarna hamnar i flera rader vid små skärmar */
 }
 
-.navbar li {
-  display: inline;
-}
-
+/* Länkstil */
 .navbar a {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  padding: 10px 15px;
+  padding: 12px 15px; /* Mindre padding så de inte krockar */
   transition: 0.3s;
+  border-radius: 5px;
+  white-space: nowrap; /* Förhindrar att texten bryts */
 }
 
+/* Hover-effekt */
 .navbar a:hover {
   background-color: #555;
-  border-radius: 5px;
 }
 
-/* === Footer fix === */
+/* === Mobilvänlig navbar (anpassar sig vid små skärmar) === */
+@media (max-width: 900px) {
+  .navbar {
+    justify-content: center; /* Centrera länkarna bättre */
+    gap: 20px; /* Mindre mellanrum */
+    flex-wrap: wrap; /* Gör att länkarna automatiskt går till ny rad */
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column; /* Gör att länkarna staplas vertikalt */
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+  }
+}
+
+
+
+
+/* === Footer Styling === */
 footer {
   background: #333;
   color: white;
   text-align: center;
   padding: 15px 20px;
-  width: 100%;
-  position: relative;
-  bottom: 0;
+  font-size: 14px;
+  margin-top: auto; /* Se till att den alltid trycks ned */
 }
 
-/* === Mobilvänlig navbar === */
-@media (max-width: 768px) {
-  .navbar {
+/* Centrera text och ikoner i footern */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 900px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+/* === Ikoner i footern === */
+.footer-links {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+/* Stil för ikonerna */
+.footer-links a {
+  color: white;
+  font-size: 22px;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+/* Gör så att de syns bättre vid hover */
+.footer-links a:hover {
+  color: #008CBA;
+}
+
+/* === Responsiv fix för footer === */
+@media (max-width: 600px) {
+  .footer-container {
       flex-direction: column;
-      align-items: center;
+      text-align: center;
       gap: 10px;
   }
+
+  .footer-links {
+      justify-content: center;
+  }
 }
+
 
 /* === Om Mig-sektion === */
 #about {
@@ -201,6 +257,43 @@ footer {
   }
 }
 
+/* === Kontaktformulär styling === */
+#contact-form {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#contact-form input,
+#contact-form textarea {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  background: #f9f9f9;
+  transition: 0.3s;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+  outline: none;
+  border-color: #008CBA;
+  background: #fff;
+  box-shadow: 0px 0px 8px rgba(0, 140, 186, 0.3);
+}
+
+/* === Responsiv fix för formulär === */
+@media (max-width: 480px) {
+  #contact-form {
+      width: 90%;
+  }
+}
+
 /* === Portfölj-sektion === */
 #portfolio {
   text-align: center;
@@ -216,6 +309,7 @@ footer {
   margin-top: 20px;
 }
 
+/* === Individuellt projekt === */
 .project {
   background: white;
   padding: 20px;
@@ -243,47 +337,4 @@ footer {
 
 .project a:hover {
   background: #444;
-}
-
-/* === Footer === */
-footer {
-  background: #333;
-  color: white;
-  text-align: center;
-  padding: 15px 20px;
-  width: 100%;
-  font-size: 14px;
-  margin-top: auto;
-}
-
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 900px;
-  margin: auto;
-  flex-wrap: wrap;
-}
-
-.footer-links {
-  display: flex;
-  gap: 15px;
-}
-
-.footer-links a {
-  color: white;
-  font-size: 18px;
-  transition: 0.3s;
-}
-
-.footer-links a:hover {
-  color: #008CBA;
-}
-
-/* === Responsiv fix för footer === */
-@media (max-width: 600px) {
-  .footer-container {
-      flex-direction: column;
-      gap: 10px;
-  }
 }
